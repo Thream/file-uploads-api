@@ -12,7 +12,7 @@ const parameters = Type.Object({
 type Parameters = Static<typeof parameters>
 
 export const getServiceSchema: FastifySchema = {
-  tags: ['uploads'] as string[],
+  tags: ['users'] as string[],
   params: parameters,
   response: {
     200: {

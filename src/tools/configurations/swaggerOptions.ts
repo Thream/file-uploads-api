@@ -14,7 +14,16 @@ export const swaggerOptions: FastifyDynamicSwaggerOptions = {
       description: packageJSON.description,
       version: packageJSON.version
     },
-    tags: [{ name: 'guilds' }, { name: 'messages' }, { name: 'users' }]
+    tags: [{ name: 'guilds' }, { name: 'messages' }, { name: 'users' }],
+    components: {
+      securitySchemes: {
+        apiKeyAuth: {
+          type: 'apiKey',
+          name: 'X-API-KEY',
+          in: 'header'
+        }
+      }
+    }
   },
   exposeRoute: true,
   staticCSP: true,
