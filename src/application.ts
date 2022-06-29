@@ -2,12 +2,12 @@ import { fileURLToPath } from 'node:url'
 
 import dotenv from 'dotenv'
 import fastify from 'fastify'
-import fastifyCors from 'fastify-cors'
-import fastifySwagger from 'fastify-swagger'
-import fastifyHelmet from 'fastify-helmet'
-import fastifyRateLimit from 'fastify-rate-limit'
-import fastifySensible from 'fastify-sensible'
-import fastifyStatic from 'fastify-static'
+import fastifyCors from '@fastify/cors'
+import fastifySwagger from '@fastify/swagger'
+import fastifyHelmet from '@fastify/helmet'
+import fastifyRateLimit from '@fastify/rate-limit'
+import fastifySensible from '@fastify/sensible'
+import fastifyStatic from '@fastify/static'
 
 import { services } from './services/index.js'
 import { swaggerOptions } from './tools/configurations/swaggerOptions.js'
@@ -18,7 +18,11 @@ export const application = fastify({
   logger: process.env.NODE_ENV === 'development',
   ajv: {
     customOptions: {
-      format: 'full'
+      strict: 'log',
+      keywords: ['kind', 'modifier'],
+      formats: {
+        full: true
+      }
     }
   }
 })

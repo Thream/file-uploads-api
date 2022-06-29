@@ -1,6 +1,6 @@
 import { Type } from '@sinclair/typebox'
 import { FastifyPluginAsync, FastifySchema } from 'fastify'
-import fastifyMultipart from 'fastify-multipart'
+import fastifyMultipart from '@fastify/multipart'
 
 import { fastifyErrors } from '../../../models/utils.js'
 import { uploadFile } from '../../../tools/utils/uploadFile.js'

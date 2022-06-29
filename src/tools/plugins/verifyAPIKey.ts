@@ -25,5 +25,5 @@ export default fastifyPlugin(
       request.apiKey = apiKey
     })
   },
-  { fastify: '3.x' }
+  { fastify: '4.x' }
 )

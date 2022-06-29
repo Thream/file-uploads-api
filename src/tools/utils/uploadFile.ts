@@ -3,7 +3,7 @@ import { URL } from 'node:url'
 import { randomUUID } from 'node:crypto'
 
 import { FastifyInstance, FastifyRequest } from 'fastify'
-import { Multipart } from 'fastify-multipart'
+import { Multipart } from '@fastify/multipart'
 
 import { API_URL, ROOT_URL } from '../configurations/index.js'
 
