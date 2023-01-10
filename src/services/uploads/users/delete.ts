@@ -1,10 +1,10 @@
-import { FastifyPluginAsync, FastifySchema } from 'fastify'
+import type { FastifyPluginAsync, FastifySchema } from 'fastify'
 import { Type } from '@sinclair/typebox'
 
 import { fastifyErrors } from '../../../models/utils.js'
 import verifyAPIKey from '../../../tools/plugins/verifyAPIKey.js'
+import type { DeleteParameters } from '../../../tools/utils/deleteUploadedFile.js'
 import {
-  DeleteParameters,
   deleteParameters,
   deleteUploadedFile
 } from '../../../tools/utils/deleteUploadedFile.js'

@@ -1,4 +1,4 @@
-import { FastifyPluginAsync } from 'fastify'
+import type { FastifyPluginAsync } from 'fastify'
 
 import { deleteGuildsUploadsService } from './guilds/delete.js'
 import { getGuildsUploadsService } from './guilds/get.js'

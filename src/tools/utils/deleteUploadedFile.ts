@@ -1,11 +1,12 @@
-import { IncomingMessage, Server, ServerResponse } from 'node:http'
+import type { IncomingMessage, Server, ServerResponse } from 'node:http'
 import { fileURLToPath } from 'node:url'
 import fs from 'node:fs'
 
-import { Static, Type } from '@sinclair/typebox'
-import {
+import type { Static } from '@sinclair/typebox'
+import { Type } from '@sinclair/typebox'
+import type {
+  FastifyBaseLogger,
   FastifyInstance,
-  FastifyLoggerInstance,
   FastifyReply,
   FastifyRequest,
   FastifyTypeProviderDefault
@@ -22,10 +23,10 @@ export type DeleteParameters = Static<typeof deleteParameters>
 export interface DeleteUploadedFileOptions {
   folder: 'guilds' | 'messages' | 'users'
   fastify: FastifyInstance<
-    Server,
+    Server<typeof IncomingMessage, typeof ServerResponse>,
     IncomingMessage,
-    ServerResponse,
-    FastifyLoggerInstance,
+    ServerResponse<IncomingMessage>,
+    FastifyBaseLogger,
     FastifyTypeProviderDefault
   >
   request: FastifyRequest<{ Params: DeleteParameters }>

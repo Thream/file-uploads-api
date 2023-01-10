@@ -1,7 +1,8 @@
 import path from 'node:path'
 
-import { FastifyPluginAsync, FastifySchema } from 'fastify'
-import { Static, Type } from '@sinclair/typebox'
+import type { FastifyPluginAsync, FastifySchema } from 'fastify'
+import type { Static } from '@sinclair/typebox'
+import { Type } from '@sinclair/typebox'
 
 import { fastifyErrors } from '../../../models/utils.js'
 

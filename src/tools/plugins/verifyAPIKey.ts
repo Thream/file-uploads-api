@@ -1,7 +1,7 @@
 import fastifyPlugin from 'fastify-plugin'
 import httpErrors from 'http-errors'
 
-import { API_KEY } from '../configurations/index.js'
+import { API_KEY } from '../configurations.js'
 
 const { Unauthorized, Forbidden } = httpErrors
 

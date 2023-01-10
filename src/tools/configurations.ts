@@ -4,10 +4,10 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-export const PORT = parseInt(process.env.PORT ?? '8000', 10)
-export const HOST = process.env.HOST ?? '0.0.0.0'
-export const API_URL = process.env.API_URL ?? `http://${HOST}:${PORT}`
-export const API_KEY = process.env.API_KEY ?? 'apiKeySecret'
+export const PORT = parseInt(process.env['PORT'] ?? '8000', 10)
+export const HOST = process.env['HOST'] ?? '0.0.0.0'
+export const API_URL = process.env['API_URL'] ?? `http://${HOST}:${PORT}`
+export const API_KEY = process.env['API_KEY'] ?? 'apiKeySecret'
 
 export const SRC_URL = new URL('../../', import.meta.url)
 export const ROOT_URL = new URL('../', SRC_URL)

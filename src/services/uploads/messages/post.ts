@@ -1,10 +1,10 @@
 import { Type } from '@sinclair/typebox'
-import { FastifyPluginAsync, FastifySchema } from 'fastify'
+import type { FastifyPluginAsync, FastifySchema } from 'fastify'
 import fastifyMultipart from '@fastify/multipart'
 
 import { fastifyErrors } from '../../../models/utils.js'
 import { uploadFile } from '../../../tools/utils/uploadFile.js'
-import { MAXIMUM_IMAGE_SIZE } from '../../../tools/configurations/index.js'
+import { MAXIMUM_IMAGE_SIZE } from '../../../tools/configurations.js'
 import verifyAPIKey from '../../../tools/plugins/verifyAPIKey.js'
 
 const postServiceSchema: FastifySchema = {

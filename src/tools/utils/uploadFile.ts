@@ -2,10 +2,10 @@ import fs from 'node:fs'
 import { URL } from 'node:url'
 import { randomUUID } from 'node:crypto'
 
-import { FastifyInstance, FastifyRequest } from 'fastify'
-import { Multipart } from '@fastify/multipart'
+import type { FastifyInstance, FastifyRequest } from 'fastify'
+import type { SavedMultipartFile } from '@fastify/multipart'
 
-import { API_URL, ROOT_URL } from '../configurations/index.js'
+import { API_URL, ROOT_URL } from '../configurations.js'
 
 export interface UploadFileOptions {
   folderInUploadsFolder: 'guilds' | 'messages' | 'users'
@@ -33,7 +33,7 @@ export const uploadFile = async (
     maximumFileSize,
     supportedFileMimetype
   } = options
-  let files: Multipart[] = []
+  let files: SavedMultipartFile[] = []
   try {
     files = await request.saveRequestFiles({
       limits: {
@@ -46,10 +46,10 @@ export const uploadFile = async (
       `File should be less than ${maximumFileSize}mb.`
     )
   }
-  if (files.length !== 1) {
+  const file = files[0]
+  if (files.length !== 1 || file == null) {
     throw fastify.httpErrors.badRequest('You must upload at most one file.')
   }
-  const file = files[0]
   if (
     supportedFileMimetype != null &&
     !supportedFileMimetype.includes(file.mimetype)
@@ -60,6 +60,9 @@ export const uploadFile = async (
   }
   const splitedMimetype = file.mimetype.split('/')
   const fileExtension = splitedMimetype[1]
+  if (fileExtension == null) {
+    throw fastify.httpErrors.badRequest('The file extension is not valid.')
+  }
   const filePath = `uploads/${folderInUploadsFolder}/${randomUUID()}.${fileExtension}`
   const fileURL = new URL(filePath, ROOT_URL)
   const pathToStoreInDatabase = `${API_URL}/${filePath}`
