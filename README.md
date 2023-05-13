@@ -50,7 +50,7 @@ npm run dev
 
 #### Services started
 
-- API : `http://localhost:8000`
+- `file-uploads-api`: <http://localhost:8000>
 
 ## 💡 Contributing
 
