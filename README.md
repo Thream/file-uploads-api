@@ -27,7 +27,7 @@ Thream's application programming interface (API) to upload files.
 
 ```sh
 # Clone the repository
-git clone https://github.com/Thream/file-uploads-api.git
+git clone git@github.com:Thream/file-uploads-api.git
 
 # Go to the project root
 cd file-uploads-api
