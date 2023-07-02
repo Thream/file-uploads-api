@@ -13,8 +13,8 @@ declare module 'fastify' {
 
 export default fastifyPlugin(
   async (fastify) => {
-    await fastify.decorateRequest('apiKey', null)
-    await fastify.addHook('onRequest', async (request) => {
+    fastify.decorateRequest('apiKey', undefined)
+    fastify.addHook('onRequest', async (request) => {
       const apiKey = request.headers['x-api-key']
       if (apiKey == null || typeof apiKey !== 'string') {
         throw new Unauthorized()
