@@ -5,7 +5,7 @@ import { randomUUID } from 'node:crypto'
 import type { FastifyInstance, FastifyRequest } from 'fastify'
 import type { SavedMultipartFile } from '@fastify/multipart'
 
-import { API_URL, ROOT_URL } from '../configurations.js'
+import { API_URL, ROOT_URL } from '#src/tools/configurations.js'
 
 export interface UploadFileOptions {
   folderInUploadsFolder: 'guilds' | 'messages' | 'users'
@@ -42,6 +42,7 @@ export const uploadFile = async (
       }
     })
   } catch (error) {
+    console.error(error)
     throw fastify.httpErrors.requestHeaderFieldsTooLarge(
       `File should be less than ${maximumFileSize}mb.`
     )

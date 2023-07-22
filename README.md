@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://file-uploads-api.thream.divlo.fr/documentation">Thream/file-uploads-api</a></h1>
+<h1 align="center"><a href="https://file-uploads-api.thream.theoludwig.fr/documentation">Thream/file-uploads-api</a></h1>
 
 <p align="center">
   <a href="./CONTRIBUTING.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" /></a>
@@ -51,6 +51,12 @@ npm run dev
 #### Services started
 
 - `file-uploads-api`: <http://127.0.0.1:8000>
+
+### Production environment (with [Docker](https://www.docker.com/))
+
+```sh
+docker compose up --build
+```
 
 ## 💡 Contributing
 

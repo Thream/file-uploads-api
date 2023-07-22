@@ -12,7 +12,7 @@ import type {
   FastifyTypeProviderDefault
 } from 'fastify'
 
-import { isExistingFile } from './isExistingFile.js'
+import { isExistingFile } from '#src/tools/utils/isExistingFile.js'
 
 export const deleteParameters = Type.Object({
   file: Type.String()

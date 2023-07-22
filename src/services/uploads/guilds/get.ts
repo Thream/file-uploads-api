@@ -4,7 +4,7 @@ import type { FastifyPluginAsync, FastifySchema } from 'fastify'
 import type { Static } from '@sinclair/typebox'
 import { Type } from '@sinclair/typebox'
 
-import { fastifyErrors } from '../../../models/utils.js'
+import { fastifyErrors } from '#src/models/utils.js'
 
 const parameters = Type.Object({
   file: Type.String()

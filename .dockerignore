@@ -1,0 +1,7 @@
+.*
+!.npmrc
+!.swcrc
+build
+coverage
+node_modules
+Dockerfile

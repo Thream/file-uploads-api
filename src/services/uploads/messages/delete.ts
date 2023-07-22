@@ -1,13 +1,13 @@
 import type { FastifyPluginAsync, FastifySchema } from 'fastify'
 import { Type } from '@sinclair/typebox'
 
-import { fastifyErrors } from '../../../models/utils.js'
-import verifyAPIKey from '../../../tools/plugins/verifyAPIKey.js'
-import type { DeleteParameters } from '../../../tools/utils/deleteUploadedFile.js'
+import { fastifyErrors } from '#src/models/utils.js'
+import verifyAPIKey from '#src/tools/plugins/verifyAPIKey.js'
+import type { DeleteParameters } from '#src/tools/utils/deleteUploadedFile.js'
 import {
   deleteParameters,
   deleteUploadedFile
-} from '../../../tools/utils/deleteUploadedFile.js'
+} from '#src/tools/utils/deleteUploadedFile.js'
 
 export const deleteServiceSchema: FastifySchema = {
   tags: ['messages'] as string[],

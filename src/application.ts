@@ -11,8 +11,8 @@ import fastifySensible from '@fastify/sensible'
 import fastifyStatic from '@fastify/static'
 import { readPackage } from 'read-pkg'
 
-import { services } from './services/index.js'
-import { UPLOADS_URL } from './tools/configurations.js'
+import { services } from '#src/services/index.js'
+import { UPLOADS_URL } from '#src/tools/configurations.js'
 
 dotenv.config()
 const packageJSON = await readPackage()

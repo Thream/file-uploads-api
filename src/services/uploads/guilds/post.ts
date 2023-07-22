@@ -2,13 +2,13 @@ import { Type } from '@sinclair/typebox'
 import type { FastifyPluginAsync, FastifySchema } from 'fastify'
 import fastifyMultipart from '@fastify/multipart'
 
-import { fastifyErrors } from '../../../models/utils.js'
-import { uploadFile } from '../../../tools/utils/uploadFile.js'
+import { fastifyErrors } from '#src/models/utils.js'
+import { uploadFile } from '#src/tools/utils/uploadFile.js'
 import {
   MAXIMUM_IMAGE_SIZE,
   SUPPORTED_IMAGE_MIMETYPE
-} from '../../../tools/configurations.js'
-import verifyAPIKey from '../../../tools/plugins/verifyAPIKey.js'
+} from '#src/tools/configurations.js'
+import verifyAPIKey from '#src/tools/plugins/verifyAPIKey.js'
 
 const postServiceSchema: FastifySchema = {
   description: 'Uploads guild icon',
