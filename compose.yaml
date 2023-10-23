@@ -1,11 +1,11 @@
 services:
   thream-file-uploads-api:
     container_name: ${COMPOSE_PROJECT_NAME}
-    image: 'thream-file-uploads-api'
-    restart: 'unless-stopped'
-    network_mode: 'host'
+    image: "thream-file-uploads-api"
+    restart: "unless-stopped"
+    network_mode: "host"
     build:
-      context: './'
-    env_file: '.env'
+      context: "./"
+    env_file: ".env"
     volumes:
-      - './uploads:/usr/src/application/uploads'
+      - "./uploads:/usr/src/application/uploads"
